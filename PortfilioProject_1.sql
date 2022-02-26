@@ -3,6 +3,7 @@
 -- Timeline starts from Feb2020 until Feb2022
 
 
+
 Select *
 From PortfolioProject..Deaths
 order by 3,4
@@ -10,6 +11,8 @@ order by 3,4
 Select location, date, total_cases, new_cases, total_deaths, population
 From PortfolioProject..Deaths
 order by 1,2
+
+
 
 -- Change date format
 
@@ -41,7 +44,7 @@ From PortfolioProject..Deaths
 order by 1,2
 
 
--- Calc Total cases vs Population (percentage how many ppl got infected in Serbiia)
+-- Calc Total cases vs Population (percentage of how many people got infected in Serbia)
 
 Select location, DateConverted, total_cases, population, (CAST(total_cases AS float))/(CAST(population AS float))*100 as InfectPercentage
 From PortfolioProject..Deaths
@@ -55,6 +58,7 @@ Select location, population, MAX(total_cases) as HighInfCount, MAX((CAST(total_c
 From PortfolioProject..Deaths
 Group by population, location
 order by InfectPercentage desc
+
 
 -- Balkan countries with highest death rate per population
 
@@ -72,6 +76,10 @@ Join PortfolioProject..Vaccination vac
 	On dea.location = vac.location
 	and dea.date = vac.date
 Order by 1,2
+
+
+
+
 
 
 
