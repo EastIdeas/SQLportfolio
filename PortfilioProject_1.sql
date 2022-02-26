@@ -1,3 +1,8 @@
+-- Analysis on a COVID within the Balkan counties.
+-- Dataset was imported and used from https://ourworldindata.org/covid-deaths
+-- Timeline starts from Feb2020 until Feb2022
+
+
 Select *
 From PortfolioProject..Deaths
 order by 3,4
